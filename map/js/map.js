@@ -1,33 +1,25 @@
 //basic map config with custom fills, mercator projection
 var map = new Datamap({
- scope: 'subunits-ny',
- element: document.getElementById('container1'),
- projection: '',
- geographyConfig: {
-   dataUrl: 'data/newyork-with-counties.json'
- },
- setProjection: function(element) {
-   var projection = d3.geo.equirectangular()
-     .center([-72, 43])
-     .rotate([4.4, 0])
-     .scale(4000)
-     .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
-   var path = d3.geo.path()
-     .projection(projection);
+    element: document.getElementById('container1'),
+    geographyConfig: {
+        dataUrl: 'js/CountyBoundary.json'
+    },
+    scope: 'custom',
+    setProjection: function(element, options) {
+        var projection, path;
+        projection = d3.geo.albersUsa()
+            .center([long, lat])
+            .scale(element.offsetWidth)
+            .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+        }
+        
+        path = d3.geo.path()
+            .projection( projection );
 
-   return {path: path, projection: projection};
- },
- fills: {
-   defaultFill: '#f0af0a',
-   lt50: 'rgba(0,244,244,0.9)',
-   gt50: 'red'
- },
-
- data: {
-   '071': {fillKey: 'lt50' },
-   '001': {fillKey: 'gt50' }
- }
+        return {path: path, projection: projection};
+    }
 });
+
 
 var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-36315921-1']);
