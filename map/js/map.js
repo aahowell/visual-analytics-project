@@ -8,7 +8,7 @@ var map = new Datamap({
     setProjection: function(element, options) {
         var projection, path;
         projection = d3.geo.equirectangular()
-            .center([-32, 79])
+            .center([32, 79])
             .scale(element.offsetWidth)
             .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
         path = d3.geo.path()
