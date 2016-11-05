@@ -2,7 +2,7 @@
 var map = new Datamap({
     element: document.getElementById('container1'),
     geographyConfig: {
-        dataUrl: 'data/new-topojson.json'
+        dataUrl: 'data/converted-topojson.json'
     },
     scope: 'collection',
     setProjection: function(element, options) {
