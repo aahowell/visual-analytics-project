@@ -2,23 +2,20 @@
 var map = new Datamap({
     element: document.getElementById('container1'),
     geographyConfig: {
-        dataUrl: 'js/CountyBoundary.json'
+        dataUrl: 'data/new-topojson.json'
     },
-    scope: 'custom',
+    scope: 'collection',
     setProjection: function(element, options) {
         var projection, path;
-        projection = d3.geo.albersUsa()
-            .center([long, lat])
-            .scale(element.offsetWidth)
+        projection = d3.geo.equirectangular()
+            .center([-32, 79])
+            .scale(15)
             .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
-        }
-        
         path = d3.geo.path()
-            .projection( projection );
-
+                .projection( projection );
         return {path: path, projection: projection};
-    }
-});
+        }
+    });
 
 
 var _gaq = _gaq || [];
