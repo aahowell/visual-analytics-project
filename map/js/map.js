@@ -1,4 +1,4 @@
-//basic map config with custom fills, mercator projection
+
 var map = new Datamap({
  scope: 'ncgeo',
  element: document.getElementById('container1'),
@@ -6,19 +6,21 @@ var map = new Datamap({
  geographyConfig: {
    dataUrl: 'data/nc.json'
  },
+
  setProjection: function(element) {
    var projection = d3.geo.equirectangular()
      .center([-72, 43])
      .rotate([4.4, 0])
-     .scale(2000)
+     .scale(4000)
      .translate([element.offsetWidth / 2, element.offsetHeight / 4]);
    var path = d3.geo.path()
      .projection(projection);
 
    return {path: path, projection: projection};
  },
+
  fills: {
-   defaultFill: '#f0af0a',
+   defaultFill: '#cb9fd9',
    lt50: 'rgba(0,244,244,0.9)',
    gt50: 'red'
  },
