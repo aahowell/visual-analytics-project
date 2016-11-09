@@ -14,6 +14,7 @@
     fills: {
       defaultFill: '#ABDDA4'
     },
+
     geographyConfig: {
         dataUrl: null,
         hideAntarctica: true,
@@ -28,9 +29,11 @@
         highlightBorderColor: 'white',
         highlightBorderWidth: 1
     },
+
     projectionConfig: {
       rotation: [97, 0]
     },
+
     bubblesConfig: {
         borderWidth: 2,
         borderColor: '#FFFFFF',
@@ -737,5 +740,15 @@
       return this;
     };
   }
+
+  // var svg = d3.select("container1")
+  //     .append("div")
+  //     .classed("svg-container-line", true) //container class to make it responsive
+  //     .append("svg")
+  //     //responsive SVG needs these 2 attributes and no width and height attr
+  //     .attr("preserveAspectRatio", "xMinYMin meet")
+  //     .attr("viewBox", "0 0 585 480")
+  //     //class to make it responsive
+  //     .classed("svg-content-responsive", true)
 
 })();
