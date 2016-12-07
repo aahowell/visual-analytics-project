@@ -1,2 +1,2 @@
 # Visual Analytics Project: NC Map
-<a href="http://aleahhowell.com/NCviolence/">View live application: aleahhowell.com/NCviolence/</a>
+View live application:<a href="http://aleahhowell.com/NCviolence/">aleahhowell.com/NCviolence/</a>
