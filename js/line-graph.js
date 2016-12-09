@@ -40,20 +40,39 @@ var svg2 = d3.select("#linegraph")
   .attr("viewBox", "-50 -25 800 900")
   .classed("svg-content-responsive", true);
 
-svg2.append("g")
-.attr("class", "x axis")
-.attr("transform", "translate(0," + height + ")")
-.call(xAxis);
+  // Add x axis
+  svg2.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + height + ")")
 
-svg2.append("g")
-.attr("class", "y axis")
-.call(yAxis)
-.append("text")
-.attr("transform", "rotate(-90)")
-.attr("y", 6)
-.attr("dy", ".71em")
-.style("text-anchor", "end")
-.text("Number of Clients");
+  // Add x axis label
+  svg2.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", width)
+    .attr("y", height - 6)
+    .text("Fiscal Year");
+
+  // Add Y axis
+  svg2.append("g")
+  .attr("class", "y axis")
+  .call(yAxis)
+  .append("text")
+  .attr("transform", "rotate(-90)")
+  .attr("y", 6)
+  .attr("dy", ".71em")
+  .style("text-anchor", "end")
+  .text("Number of Clients");
+
+  // Add y-axis label
+  svg2.append("text")
+      .attr("class", "y label")
+      .attr("text-anchor", "end")
+      .attr("y", 6)
+      .attr("dy", ".75em")
+      .attr("transform", "rotate(-90)")
+      .text("Number of Clients");
+
 
 function lineChange(linegraphs) {
 
@@ -78,9 +97,7 @@ d3.csv("data/data-clients.csv", function (error, data) {
 
     var line_data = [{"type": "sa", "values": sa_all}, {"type": "dv", "values": dv_all }];
 
-
     var all_values = sexual_assault.concat(domestic_violence)
-
 
     x.domain(years);
 
@@ -120,7 +137,6 @@ d3.csv("data/data-clients.csv", function (error, data) {
        .on("mouseover", function (d) { var bodyNode = d3.select('body').node();
            var absoluteMousePos = d3.mouse(bodyNode); showPopover.call(this, d); $('.popover')[0].style.top = (absoluteMousePos[1] - 105) + 'px';  })
        .on("mouseout",  function (d) { removePopovers(); });
-
 
 
     circles.exit().attr("r",0).remove();

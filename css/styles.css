@@ -110,6 +110,12 @@ h3 {
   color: #5c315e;
 }
 
+#info-text {
+  text-align: center;
+  font-weight: 500;
+  font-style: italic;
+}
+
 #intro-paragraph {
   font-size: 18px;
   /*text-indent: 50px;*/
@@ -120,9 +126,34 @@ h3 {
   text-indent: 50px;
 }
 
+#intro-paragraph1 a  {
+  text-decoration: underline;
+  color: #5c315e;
+}
+
+#intro-paragraph1 a:hover  {
+  text-decoration: underline;
+  color: black;
+}
+
 #intro-paragraph2 {
   font-size: 18px;
   text-indent: 50px;
+}
+
+#intro-paragraph3 {
+  text-decoration: none;
+  text-align: center;
+}
+
+#intro-paragraph3 a {
+  text-decoration: none;
+  color: #5c315e;
+}
+
+#intro-paragraph3 a:hover {
+  text-decoration: underline;
+  color: black;
 }
 
 .map-container {
@@ -138,6 +169,21 @@ h3 {
 .container {
     padding-left: 20%;
     padding-right: 20%;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: black;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background-color: transparent;
+}
+
+a:active {
+  color: black;
+  font-weight: bold;
 }
 
 #padding {

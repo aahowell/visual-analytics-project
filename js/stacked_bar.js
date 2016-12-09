@@ -119,20 +119,36 @@ function Vis() {
                 return d.year;
             }));
 
-            svg3.append("g")
-                .attr("class", "x axis")
-                .attr("transform", "translate(0," + height + ")")
-                .call(d3.axisBottom(x));
+        // Create x axis
+        svg3.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x));
 
-            svg3.append("g")
-                .attr("class", "y axis")
-                .call(d3.axisLeft(y).ticks(10, "s"))
-                .append("text")
-                .attr("transform", "rotate(-90)")
-                .attr("y", 6)
-                .attr("dy", ".71em")
-                .style("text-anchor", "end")
-                .text("Number of Services");
+        // svg3.append("text")
+        //         .attr("transform", "translate(" + (width / 2) + " ," + (height + margin.bottom) + ")")
+        //         .style("text-anchor", "middle")
+        //         .text("Fiscal Year");
+
+        // create y axis
+        svg3.append("g")
+            .attr("class", "y axis")
+            .call(d3.axisLeft(y).ticks(10, "s"))
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("Number of Services");
+
+        // create y axis label
+        svg3.append("text")
+           .attr("class", "y label")
+            .attr("text-anchor", "end")
+            .attr("y", 6)
+            .attr("dy", ".75em")
+            .attr("transform", "rotate(-90)")
+            .text("Number of Services");
 
         var selection = svg3.selectAll(".series")
             .data(data)
